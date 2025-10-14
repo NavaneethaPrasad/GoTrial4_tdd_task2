@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"testing"
 )
 
@@ -40,6 +41,15 @@ func TestAverage(t *testing.T) {
 	actual := averageNum([]int{1, 2, 3})
 	expected := 2.0
 	if actual != expected {
-		t.Errorf("Expected is %f but got %f", expected, actual)
+		t.Errorf("Expected is %.2f but got %.2f", expected, actual)
+	}
+}
+
+func TestAverage2(t *testing.T) {
+	actual := averageNum([]int{5, 8, 6})
+	expected := 6.33
+	actual = math.Round(actual*100) / 100
+	if actual != expected {
+		t.Errorf("Expected is %.2f but got %.2f", expected, actual)
 	}
 }
