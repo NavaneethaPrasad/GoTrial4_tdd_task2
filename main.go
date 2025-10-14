@@ -3,7 +3,13 @@ package main
 import "fmt"
 
 func largestNum(num []int) int {
-	return 3
+	largest := num[0]
+	for _, n := range num {
+		if n > largest {
+			largest = n
+		}
+	}
+	return largest
 }
 
 func main() {
