@@ -12,7 +12,13 @@ func largestNum(num []int) int {
 	return largest
 }
 func smallestNum(num []int) int {
-	return 1
+	smallest := num[0]
+	for _, n := range num {
+		if n < smallest {
+			smallest = n
+		}
+	}
+	return smallest
 }
 
 func main() {
