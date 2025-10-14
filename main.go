@@ -11,8 +11,12 @@ func largestNum(num []int) int {
 	}
 	return largest
 }
+func smallestNum(num []int) int {
+	return 1
+}
 
 func main() {
 	fmt.Println(largestNum([]int{1, 2, 3}))
+	fmt.Println(smallestNum([]int{1, 2, 3}))
 
 }
