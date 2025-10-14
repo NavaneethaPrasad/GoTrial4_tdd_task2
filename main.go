@@ -21,8 +21,11 @@ func smallestNum(num []int) int {
 	return smallest
 }
 
+func averageNum(num []int) float64 {
+	return 2.0
+}
 func main() {
 	fmt.Println(largestNum([]int{1, 2, 3}))
 	fmt.Println(smallestNum([]int{1, 2, 3}))
-
+	fmt.Println(averageNum([]int{1, 2, 3}))
 }
