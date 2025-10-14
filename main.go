@@ -22,7 +22,12 @@ func smallestNum(num []int) int {
 }
 
 func averageNum(num []int) float64 {
-	return 2.0
+	sum := 0
+	for _, n := range num {
+		sum += n
+	}
+	average := float64(sum) / float64(len(num))
+	return average
 }
 func main() {
 	fmt.Println(largestNum([]int{1, 2, 3}))
