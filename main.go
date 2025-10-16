@@ -2,35 +2,28 @@ package main
 
 import "fmt"
 
-func largestNum(num []int) int {
+func analyzeNumbers(num []int) (int, int, float64) {
 	largest := num[0]
+	smallest := num[0]
+	sum := 0
+
 	for _, n := range num {
 		if n > largest {
 			largest = n
 		}
-	}
-	return largest
-}
-func smallestNum(num []int) int {
-	smallest := num[0]
-	for _, n := range num {
 		if n < smallest {
 			smallest = n
 		}
-	}
-	return smallest
-}
-
-func averageNum(num []int) float64 {
-	sum := 0
-	for _, n := range num {
 		sum += n
 	}
+
 	average := float64(sum) / float64(len(num))
-	return average
+	return largest, smallest, average
 }
+
 func main() {
-	fmt.Println(largestNum([]int{1, 2, 3}))
-	fmt.Println(smallestNum([]int{1, 2, 3}))
-	fmt.Println(averageNum([]int{1, 2, 3}))
+	l, s, a := analyzeNumbers([]int{1, 2, 3})
+	fmt.Println("Largest:", l)
+	fmt.Println("Smallest:", s)
+	fmt.Println("Average:", a)
 }
